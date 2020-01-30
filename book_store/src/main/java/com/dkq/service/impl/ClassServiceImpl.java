@@ -1,5 +1,6 @@
 package com.dkq.service.impl;
 
+import com.dkq.entity.BookClass;
 import com.dkq.mapper.ClassMapper;
 import com.dkq.service.ClassService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,7 @@ public class ClassServiceImpl implements ClassService {
     private ClassMapper classMapper;
 
     @Override
-    public List<Class> queryAll() {
+    public List<BookClass> queryAll() {
         return classMapper.queryAll();
     }
 }

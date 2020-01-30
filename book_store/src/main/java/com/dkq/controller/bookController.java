@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/book")
 @CrossOrigin(origins = "*")//解决跨域请求
-public class BookController {
+public class bookController {
 
     @Autowired
     private BookService bookService;

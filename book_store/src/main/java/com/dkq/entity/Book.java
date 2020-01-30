@@ -22,6 +22,6 @@ public class Book implements Serializable {
     private Integer classid;
     private String descr;
     private String path;
-    private Class bookClass;
+    private BookClass bookClass;
 
 }

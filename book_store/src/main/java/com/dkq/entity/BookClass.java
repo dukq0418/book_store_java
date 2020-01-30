@@ -13,7 +13,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @ToString
 @Component
-public class Class implements Serializable {
+public class BookClass implements Serializable {
 
     private Integer id;
     private String name;

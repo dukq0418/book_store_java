@@ -1,5 +1,6 @@
 package com.dkq.controller;
 
+import com.dkq.entity.BookClass;
 import com.dkq.service.ClassService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -10,15 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/class")
-@CrossOrigin(origins = "*")
+@RequestMapping("/bookClass")
+@CrossOrigin(origins = "*")//解决跨域请求
 public class classController {
     @Autowired
     private ClassService classService;
 
     @GetMapping("/queryAll")
-    public List<Class> queryAll(){
-        List<Class> classes = classService.queryAll();
+    public List<BookClass> queryAll(){
+        List<BookClass> classes = classService.queryAll();
         return classes;
     }
 }
