@@ -1,0 +1,32 @@
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.dkq.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    auto-mapping-behavior: full
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bookstore?serverTimezone=Asia/Shanghai
+    username: root
+    password: 'root'
+
+  thymeleaf:
+    cache: false
+    encoding: utf-8
+    suffix: .html
+    prefix: classpath:/templates/
+    mode: HTML5
+    servlet:
+      content-type: text/html
+
+server:
+  port: 8081
+
+pagehelper:
+#  标识那种数据库
+  helper-dialect: mysql
+  reasonable: true
+  params: count=countSql
+  support-methods-arguments: true
