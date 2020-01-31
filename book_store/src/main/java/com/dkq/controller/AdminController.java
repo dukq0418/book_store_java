@@ -37,4 +37,12 @@ public class AdminController {
         return 0;
     }
 
+    @RequestMapping("/logout")
+    public String logout(){
+        Subject subject = SecurityUtils.getSubject();
+        subject.logout();
+        System.out.println("1111111111111111111111");
+        return "success";
+    }
+
 }
