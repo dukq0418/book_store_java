@@ -27,4 +27,9 @@
     <delete id="delete" >
         delete from book where id = #{id};
     </delete>
+
+    <insert id="add">
+        insert into book (bookname, author, price, classid, descr, path)
+        values (#{bookname},#{author},#{price},#{classid},#{descr},#{path});
+    </insert>
 </mapper>

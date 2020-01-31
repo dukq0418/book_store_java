@@ -18,4 +18,14 @@ public class ClassServiceImpl implements ClassService {
     public List<BookClass> queryAll() {
         return classMapper.queryAll();
     }
+
+    @Override
+    public Integer delete(String id) {
+        return classMapper.delete(id);
+    }
+
+    @Override
+    public Integer add(String name, String descr) {
+        return classMapper.add(name,descr);
+    }
 }

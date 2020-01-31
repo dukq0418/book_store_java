@@ -6,4 +6,13 @@
     <select id="queryAll" resultType="BookClass">
         select * from bookclass;
     </select>
+
+    <delete id="delete">
+        delete from bookclass where id = #{id};
+    </delete>
+
+    <insert id="add">
+        insert into bookclass (name, descr)
+        values (#{name},#{descr});
+    </insert>
 </mapper>

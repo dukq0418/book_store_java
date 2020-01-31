@@ -4,10 +4,12 @@ import com.dkq.entity.Book;
 import com.dkq.service.BookService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/book")
@@ -47,5 +49,22 @@ public class bookController {
         }else {
             return "error";
         }
+    }
+
+    @PostMapping("/upload")
+    public String upload(MultipartFile multipartFile) throws IOException {
+        //获取文件名
+        String fileName1 = multipartFile.getOriginalFilename();
+        String path = "D:\\environment\\tomcat\\apache-tomcat-9.0.30\\webapps\\image";
+        String fileName = UUID.randomUUID().toString()+fileName1;
+        File file = new File(path, fileName);
+        multipartFile.transferTo(file);
+        return "http://localhost:8082/image/"+fileName;
+    }
+
+    @GetMapping("/add")
+    public Integer add(String bookname,String author,String price,String classid,String descr,String path){
+        Integer add = bookService.add(bookname, author, price, classid, descr, path);
+        return add;
     }
 }

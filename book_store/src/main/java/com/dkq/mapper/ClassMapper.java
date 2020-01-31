@@ -10,4 +10,8 @@ import java.util.List;
 @Mapper
 public interface ClassMapper {
     List<BookClass> queryAll();
+
+    Integer delete(String id);
+
+    Integer add(String name, String descr);
 }

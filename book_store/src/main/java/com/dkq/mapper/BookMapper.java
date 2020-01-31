@@ -17,4 +17,6 @@ public interface BookMapper {
     Book queryById(String id);
 
     Integer edit(String id,String author,String price, String descr);
+
+    Integer add(String bookname, String author, String price, String classid, String descr, String path);
 }

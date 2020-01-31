@@ -37,4 +37,9 @@ public class BookServiceImpl implements BookService {
         return bookMapper.edit(id,author,price,descr);
     }
 
+    @Override
+    public Integer add(String bookname, String author, String price, String classid, String descr, String path) {
+        return bookMapper.add(bookname,author,price,classid,descr,path);
+    }
+
 }

@@ -22,4 +22,16 @@ public class classController {
         List<BookClass> classes = classService.queryAll();
         return classes;
     }
+
+    @GetMapping("/delete")
+    public Integer delete(String id){
+        Integer delete = classService.delete(id);
+        return delete;
+    }
+
+    @GetMapping("/add")
+    public Integer add(String name,String descr){
+        Integer add = classService.add(name,descr);
+        return add;
+    }
 }

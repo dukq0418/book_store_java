@@ -1,14 +1,10 @@
-package com.dkq.mapper;
+package com.dkq.service;
 
 import com.dkq.entity.Customer;
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
-@Mapper
-public interface CustomerMapper {
+public interface CustomerService {
     List<Customer> queryAll();
 
     Customer queryAllById(String id);
